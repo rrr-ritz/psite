@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="title" content="Ritvik Rangaraju">
+  <meta name="description" content="">
+  <meta property="og:image" href="https://ritvik.it/old-stuff/rangaraju-circle.png" />
+
+  <link href="https://ritvik.it/old-stuff/rangaraju-circle.png" rel="shortcut icon"  />
+
+  <title>Ritvik's Personal Website</title>
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <div class="cloud floating">
+    <img src="assets/img/cloud.png" alt="">
+  </div>
+
+  <div class="cloud pos1 fliped floating">
+    <img src="assets/img/cloud.png" alt="">
+  </div>
+
+  <div class="cloud pos2 floating">
+    <img src="assets/img/cloud.png" alt="">
+  </div>
+
+  <div class="cloud pos3 fliped floating">
+    <img src="assets/img/cloud.png" alt="">
+  </div>
+
+  <div id="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <br />
+          <br />
+          <h2 class="subtitle">
+            <strong>Hi, I'm Ritvik!</strong>
+            <br><br>Enjoy the balloon ride and check out the <b>links below :)</b>
+          </h2>
+          <br />
+        </div>
+
+        <div class="col-sm-12 align-center mahrginz">
+          <ul class="social-network social-circle">
+            
+            <li>
+              <a href="https://ritvik.it/github" class="icoGit" title="GitHub"><i class="fa fa-github"></i></a>
+            </li>
+
+            <li>
+              <a href="https://ritvik.it/scholar" title="Google Scholar"><i class="fa fa-paperclip"></i></a>
+            </li>
+
+            <li>
+              <a href="https://ritvik.it/resume" title="My Resume"><i class="fa fa-book"></i></a>
+            </li>
+
+            <li>
+              <a href="https://ritvik.it/linkedin" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+            </li>
+
+            <li>
+              <a href="https://ritvik.it/photography" class="Photography" title="Photography"><i class="fa fa-camera"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-12 align-center">
+        <ul class="social-network social-circle" style="color:white">
+          
+          <li>
+            <strong>GitHub</strong>
+          </li>
+
+          <li>
+            <strong>Research</strong>
+          </li>
+
+          <li>
+            <strong>Resume</strong>
+          </li>
+
+          <li>
+            <strong>LinkedIn</strong>
+          </li>
+
+          <li>
+            <strong>Photography</strong>
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <p class="copyright">
+            <strong>&copy; 2023 by Ritvik Rangaraju</strong>
+          </p>
+        </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script>
+      $(document).ready(function() {
+        $('#wrapper').height($(document).height());
+        var $form = $('form');
+    
+        if ($form.length > 0) {
+          $('form input[type="submit"]').bind('click', function(event) {
+            if (event) event.preventDefault();
+            if ($form.validate()) {
+              register($form);
+            }
+          });
+        }
+      });
+    
+      function appendResult(userText, className, iconClass) {
+        var resultHTML = "<div class='stretchLeft result " + className + "'>" + userText + " <span class='fa fa-" + iconClass + "'></span>" + "</div>";
+        $('body').append(resultHTML);
+        $('.result').delay(10000).fadeOut('1000');
+      }
+    </script>
+    </div>
+  </div>
+</body>
+</html>

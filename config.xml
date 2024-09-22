@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<juiceboxgallery galleryTitle="By Ritvik Rangaraju">
+  
+  <image imageURL="images/pic1.jpeg"
+	thumbURL="thumbs/pic1.jpeg"
+	linkURL="images/pic1.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic2.jpeg"
+	thumbURL="thumbs/pic2.jpeg"
+	linkURL="images/pic2.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic3.jpeg"
+	thumbURL="thumbs/pic3.jpeg"
+	linkURL="images/pic3.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic4.jpeg"
+	thumbURL="thumbs/pic4.jpeg"
+	linkURL="images/pic4.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic5.jpeg"
+	thumbURL="thumbs/pic5.jpeg"
+	linkURL="images/pic5.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic6.jpeg"
+	thumbURL="thumbs/pic6.jpeg"
+	linkURL="images/pic6.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic7.jpeg"
+	thumbURL="thumbs/pic7.jpeg"
+	linkURL="images/pic7.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic8.jpeg"
+	thumbURL="thumbs/pic8.jpeg"
+	linkURL="images/pic8.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic9.jpeg"
+	thumbURL="thumbs/pic9.jpeg"
+	linkURL="images/pic9.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic10.jpeg"
+	thumbURL="thumbs/pic10.jpeg"
+	linkURL="images/pic10.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic11.jpeg"
+	thumbURL="thumbs/pic11.jpeg"
+	linkURL="images/pic11.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic12.jpeg"
+	thumbURL="thumbs/pic12.jpeg"
+	linkURL="images/pic12.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic13.jpeg"
+	thumbURL="thumbs/pic13.jpeg"
+	linkURL="images/pic13.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic14.jpeg"
+	thumbURL="thumbs/pic14.jpeg"
+	linkURL="images/pic14.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic15.jpeg"
+	thumbURL="thumbs/pic15.jpeg"
+	linkURL="images/pic15.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+  <image imageURL="images/pic16.jpeg"
+	thumbURL="thumbs/pic16.jpeg"
+	linkURL="images/pic16.jpeg"
+	linkTarget="_blank">
+	
+  </image>
+
+</juiceboxgallery>
