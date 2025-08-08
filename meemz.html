@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cake n candles bruv 🎂</title>
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/fortnite-background-scaled.jpeg') center center / cover no-repeat fixed;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #llama {
+      position: absolute;
+      left: 45%;
+      top: 70%;
+      transform: translate(-50%, -50%);
+      width: 360px;
+      cursor: pointer;
+      filter: drop-shadow(0 15px 10px rgba(0,0,0,0.4)) drop-shadow(0 25px 25px rgba(0,0,0,0.3));
+      will-change: transform;
+    }
+    /* V-Bucks rain particles */
+    .vbucks {
+      position: fixed;
+      top: -15vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    /* Speech bubble – shifted left 5%, up 5% */
+    #speech-bubble {
+      display: none;
+      position: absolute;
+      left: 40%;
+      top: 40%;   /* shifted up */
+      transform: translate(-50%, -20%) scale(0.5);
+      width: 320px;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      padding: 18px 20px;
+      border-radius: 18px;
+      font-size: 1rem;
+      line-height: 1.4rem;
+      text-align: center;
+      z-index: 10;
+    }
+    #speech-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -22px;
+      left: 60px;
+      border-width: 22px 22px 0 22px;
+      border-style: solid;
+      border-color: rgba(255,255,255,0.9) transparent transparent transparent;
+    }
+    /* Code box – positioned above bubble */
+    #code-box {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 30%;  /* moved up to sit above speech bubble */
+      transform: translate(-50%, -50%) scale(0.8);
+      padding: 24px 28px;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border: 4px dashed #fff;
+      border-radius: 16px;
+      font-size: 1.2rem;
+      text-align: center;
+      z-index: 12;
+    }
+    #code-box code {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    a { color: #00ffff; text-decoration: none; }
+    a:hover { text-decoration: underline; } {
+      display: none;
+      position: absolute;
+      left: 50%; /* centered */
+      top: 22%;  /* high enough to clear the speech bubble */
+      transform: translate(-50%, -50%) scale(0.8);
+      padding: 24px 28px;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border: 4px dashed #fff;
+      border-radius: 16px;
+      font-size: 1.2rem;
+      text-align: center;
+      z-index: 12; /* sits above speech bubble */
+    }
+    #code-box code {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    #code-box code {
+      background: rgba(255,255,255,0.15);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    a { color: #00ffff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <img id="llama" src="images/llama.png" alt="Loot Llama Piñata">
+  <img id="vbucks-img" src="images/vbucks.png" style="display:none;">
+
+  <!-- Speech bubble and code box -->
+  <div id="speech-bubble">happy belated bday vro congrats on turning forty 🥀 hope u had a banger day and spend this on vbucks so u can get the battle pass and emote all over our favorite medkit holder 🚒</div>
+  <div id="code-box">code: <code>E0YD1SJG6NW3LXLB</code> (<a href="https://ec.nintendo.com/redeem/" target="_blank" rel="noopener">redeem</a>)</div>
+
+<script>
+window.addEventListener('load', () => {
+  const llama      = document.getElementById('llama');
+  const vbucksSrc  = document.getElementById('vbucks-img').src;
+  const speech     = document.getElementById('speech-bubble');
+  const codeBox    = document.getElementById('code-box');
+
+  let hits = 0;
+  const needed = 8;
+  const rand = gsap.utils.random;
+
+  llama.addEventListener('mouseenter', () => gsap.to(llama,{scale:1.1,duration:0.4}));
+  llama.addEventListener('mouseleave', () => gsap.to(llama,{scale:1,duration:0.4}));
+
+  llama.addEventListener('click', () => {
+    if (hits < needed) {
+      hits++;
+      gsap.fromTo(llama,{rotation:-12},{rotation:12,duration:0.08,yoyo:true,repeat:5});
+      if (hits === needed) reveal();
+    }
+  });
+
+  function reveal() {
+    rainVBucks(90);
+    showSpeechAndCode();
+  }
+
+  function rainVBucks(count) {
+    for (let i = 0; i < count; i++) {
+      const vb = document.createElement('img');
+      vb.src = vbucksSrc;
+      vb.className = 'vbucks';
+      vb.style.left = rand(-10, 110) + 'vw';
+      const size = rand(60, 120);
+      vb.style.width = size + 'px';
+      document.body.appendChild(vb);
+      const dur = rand(6, 10), drift = rand(-30, 30), rot = rand(-360, 360), delay = rand(0, 2);
+      gsap.fromTo(vb, { y: '-15vh', opacity: 0.9 }, { y: '115vh', x: `+=${drift}vw`, rotation: rot, duration: dur, delay: delay, ease: 'none', onComplete: () => vb.remove() });
+    }
+  }
+
+  function showSpeechAndCode() {
+    speech.style.display = 'block';
+    codeBox.style.display = 'block';
+    gsap.to(speech,  { scale: 1, opacity: 1, duration: 3,   ease: 'back.out(1.7)' });
+    gsap.to(codeBox, { scale: 1, opacity: 1, duration: 1.2, delay: 1.5, ease: 'back.out(1.7)' });
+  }
+});
+</script>
+</body>
+</html>
